@@ -496,10 +496,11 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  // ANET A8
-  #define DEFAULT_Kp 27.01
-  #define DEFAULT_Ki 2.66
-  #define DEFAULT_Kd 68.60
+  //@ ANET A8 calibración hotend a 200º , 8 ciclos -> M303 E0 S200 C8
+  #define DEFAULT_Kp 28.35
+  #define DEFAULT_Ki 2.81
+  #define DEFAULT_Kd 71.58
+
 
   // Ultimaker
   //#define DEFAULT_Kp 22.2
@@ -552,10 +553,10 @@
   //#define MIN_BED_POWER 0
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
-  //@ ANET A8 con cama de serie, base magnética a 50º  -> M303 E-1 C5 S50
-  #define DEFAULT_bedKp 205.51
-  #define DEFAULT_bedKi 23.01
-  #define DEFAULT_bedKd 458.77       
+  //@ ANET A8 con cama de serie, base magnética a 50º, mosfet  -> M303 E-1 C5 S50
+  #define DEFAULT_bedKp 21.30
+  #define DEFAULT_bedKi 4.09
+  #define DEFAULT_bedKd 73.98
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
@@ -1035,7 +1036,7 @@
  */
 //@
 //#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
-#define NOZZLE_TO_PROBE_OFFSET { 0, 51, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 51, -0.6 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
