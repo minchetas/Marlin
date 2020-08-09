@@ -835,8 +835,8 @@
   //#define DEFAULT_YJERK 10.0
   //#define DEFAULT_ZJERK  0.3
 
-  #define DEFAULT_XJERK  12.0
-  #define DEFAULT_YJERK  12.0
+  #define DEFAULT_XJERK  10.0
+  #define DEFAULT_YJERK  10.0
   #define DEFAULT_ZJERK  0.2  
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
@@ -1451,9 +1451,8 @@
 //#define HOMING_FEEDRATE_XY (50*60)
 //#define HOMING_FEEDRATE_Z  (4*60)
 
-#define HOMING_FEEDRATE_XY (70*60)
-#define HOMING_FEEDRATE_Z  (6*60)
-
+#define HOMING_FEEDRATE_XY (100*60)
+#define HOMING_FEEDRATE_Z  (4*60)
 
 // Validate that endstops are triggered on homing moves
 #define VALIDATE_HOMING_ENDSTOPS
