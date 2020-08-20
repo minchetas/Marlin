@@ -496,7 +496,7 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
 
-  //@ ANET A8 calibración hotend a 200º , 8 ciclos -> M303 E0 S200 C8
+  //@ ANET A8 calibración `hotend a 200º , 8 ciclos -> M303 E0 S200 C8
   #define DEFAULT_Kp 28.35
   #define DEFAULT_Ki 2.81
   #define DEFAULT_Kd 71.58
@@ -836,8 +836,8 @@
   //#define DEFAULT_YJERK 10.0
   //#define DEFAULT_ZJERK  0.3
 
-  #define DEFAULT_XJERK  10.0
-  #define DEFAULT_YJERK  10.0
+  #define DEFAULT_XJERK  12.0
+  #define DEFAULT_YJERK  12.0
   #define DEFAULT_ZJERK  0.2  
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
@@ -1036,7 +1036,7 @@
  */
 //@
 //#define NOZZLE_TO_PROBE_OFFSET { 10, 10, 0 }
-#define NOZZLE_TO_PROBE_OFFSET { 0, 51, -0.6 }
+#define NOZZLE_TO_PROBE_OFFSET { 0, 51, -1.14 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1285,9 +1285,9 @@
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
 //@
-#define AUTO_BED_LEVELING_BILINEAR
+//#define AUTO_BED_LEVELING_BILINEAR
 //#define AUTO_BED_LEVELING_UBL
-//#define MESH_BED_LEVELING
+#define MESH_BED_LEVELING
 
 /**
  * Normally G28 leaves leveling disabled on completion. Enable
@@ -1380,8 +1380,8 @@
   //=================================== Mesh ==================================
   //===========================================================================
 
-  #define MESH_INSET 10          // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 3    // Don't use more than 7 points per axis, implementation limited.
+  #define MESH_INSET 40          // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X 2    // Don't use more than 7 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   //#define MESH_G28_REST_ORIGIN // After homing all axes ('G28' or 'G28 XYZ') rest Z at Z_MIN_POS
@@ -1444,8 +1444,8 @@
 
 #if ENABLED(Z_SAFE_HOMING)
   //@
-  #define Z_SAFE_HOMING_X_POINT   5 //X_CENTER  // X point for Z homing
-  #define Z_SAFE_HOMING_Y_POINT  55 //Y_CENTER  // Y point for Z homing
+  #define Z_SAFE_HOMING_X_POINT X_CENTER  // X point for Z homing
+  #define Z_SAFE_HOMING_Y_POINT Y_CENTER  // Y point for Z homing
 #endif
 
 // Homing speeds (mm/m)
